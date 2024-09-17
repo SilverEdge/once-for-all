@@ -1,11 +1,14 @@
 
 <script>
     import { onMount } from 'svelte';
+    import 'hamburgers/dist/hamburgers.css';
 
     onMount(() => {
         // Trigger the ESV Cross-Reference Tool script (app.html runs on window.load event, so rerun)
         window.dispatchEvent(new Event('esv-crossref.trigger-linkify'));
     });
+
+    let isMenuActive = false;
 </script>
 
 <svelte:head>
@@ -25,15 +28,33 @@
     </ul>
 </nav>
 
+<button class="{isMenuActive ? 'hamburger hamburger--squeeze is-active' : 'hamburger hamburger--squeeze'}" type="button" on:click={() =>isMenuActive = !isMenuActive}>
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
 
 <slot></slot>
 
 <style>
+
 /* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.hamburger {
+    position: absolute;
+    top:2px;
+    right:100px;
+    z-index: 2;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color: aqua !important;
 }
 
 .logo {
@@ -117,6 +138,5 @@
         visibility: hidden;
     }
 }
-
 
 </style>
