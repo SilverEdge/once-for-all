@@ -114,7 +114,8 @@
 }
 
 .navbar {
-    background-color: #333;
+    background-color: rgba(3, 3, 3, 0.5);
+    backdrop-filter: blur(10px);
     padding: 12px 0;
     font-family: Arial, sans-serif;
     position: fixed;
