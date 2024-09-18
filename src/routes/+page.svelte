@@ -67,7 +67,7 @@
 		mix-blend-mode: multiply;
 		width: 100%;
 		height: auto;
-		background-image: url('../trees.jpg');
+		background-image: url('/trees.jpg');
 		height: 500px;
 		width: 100%;
 		position: absolute;
