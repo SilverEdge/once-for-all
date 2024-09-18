@@ -22,7 +22,7 @@
 <div class="trees" style="top: calc(60px + {y * 0.5}px);"></div>
 {#if visible}
 	<div class="tag" in:fade out:fade style="top: calc(60px + {y * 0.5}px);">
-		<h3>Proclaiming God's sacrificial love for all to all</h3>
+		<h3><center>Proclaiming God's sacrificial love for all to all</center></h3>
 		<button
 			on:click={() => {
 				posts.scrollIntoView({ behavior: 'smooth' });
