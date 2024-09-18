@@ -22,11 +22,13 @@
 <nav class="navbar">
     <ul class="nav-links">
         <li><a href="/">Home</a></li>
+        <li><a href="posts">Posts</a></li>
         <li><a href="about">About</a></li>
-        <li><a href="services">Services</a></li>
         <li><a href="contact">Contact</a></li>
     </ul>
 </nav>
+
+<div class="fixednavbar"></div>
 
 <button class="{isMenuActive ? 'hamburger hamburger--squeeze is-active' : 'hamburger hamburger--squeeze'}" type="button" on:click={() =>isMenuActive = !isMenuActive}>
     <span class="hamburger-box">
@@ -34,6 +36,18 @@
     </span>
   </button>
 
+<div ></div>
+<!-- Side menu that slides in from the left -->
+<div class="{isMenuActive ? 'menu-vert open' : 'menu-vert'}">
+    <br>
+    <br>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+      <li><a href="/">Services</a></li>
+      <li><a href="/">Contact</a></li>
+    </ul>
+  </div>
 
 <slot></slot>
 
@@ -48,13 +62,21 @@
 
 .hamburger {
     position: absolute;
-    top:2px;
-    right:100px;
+    top:16px;
+    right:50px;
     z-index: 2;
+    visibility: hidden;
+}
+
+.hamburger:hover{
+    opacity: 1;
 }
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-    background-color: aqua !important;
+    background-color: white !important;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color: white !important;
 }
 
 .logo {
@@ -102,6 +124,15 @@
     z-index: 1;
 }
 
+.fixednavbar {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height:60px;
+}
+
 .nav-links {
     display: flex;
     justify-content: center; /* Center the links horizontally */
@@ -126,6 +157,40 @@
     background-color: #555;
 }
 
+ /* Basic styling */
+ .menu-vert {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease; /* Smooth slide effect */
+    padding: 20px;
+    z-index: 1;
+  }
+
+  /* Menu visible when menuOpen is true */
+  .menu-vert.open {
+    left: 0; /* Slide in the menu */
+  }
+
+  .menu-vert ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-vert ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-vert ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column; /* Stack links vertically on smaller screens */
@@ -136,6 +201,9 @@
     }
     .navbar {
         visibility: hidden;
+    }
+    .hamburger {
+        visibility:visible;
     }
 }
 
