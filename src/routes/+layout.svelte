@@ -61,7 +61,7 @@
 }
 
 .hamburger {
-    position: absolute;
+    position: fixed;
     top:16px;
     right:50px;
     z-index: 2;
