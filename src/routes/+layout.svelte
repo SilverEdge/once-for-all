@@ -19,6 +19,8 @@
 
 <div class="ylogo"></div>
 
+<div class="fixednavbar"></div>
+
 <nav class="navbar">
     <ul class="nav-links">
         <li><a href="/">Home</a></li>
@@ -27,8 +29,6 @@
         <li><a href="contact">Contact</a></li>
     </ul>
 </nav>
-
-<div class="fixednavbar"></div>
 
 <button class="{isMenuActive ? 'hamburger hamburger--squeeze is-active' : 'hamburger hamburger--squeeze'}" type="button" on:click={() =>isMenuActive = !isMenuActive}>
     <span class="hamburger-box">
@@ -42,10 +42,10 @@
     <br>
     <br>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/">About</a></li>
-      <li><a href="/">Services</a></li>
-      <li><a href="/">Contact</a></li>
+      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Home</a></li>
+      <li><a href="/about" on:click={() =>isMenuActive = !isMenuActive}>About</a></li>
+      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Services</a></li>
+      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Contact</a></li>
     </ul>
   </div>
 
@@ -161,8 +161,8 @@
  .menu-vert {
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden off-screen */
-    width: 250px;
+    left: -260px; /* Hidden off-screen */
+    width: 260px;
     height: 100%;
     background-color: #333;
     color: white;
@@ -204,6 +204,9 @@
     }
     .hamburger {
         visibility:visible;
+    }
+    .ylogo{
+        visibility: hidden;
     }
 }
 
