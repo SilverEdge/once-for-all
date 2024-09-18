@@ -162,7 +162,8 @@
     left: -260px; /* Hidden off-screen */
     width: 260px;
     height: 100%;
-    background: linear-gradient(to bottom, #333, #000);
+    background: linear-gradient(to bottom, rgba(3, 3, 3, 0.5), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(10px);
     color: white;
     transition: left 0.3s ease; /* Smooth slide effect */
     padding: 20px;
