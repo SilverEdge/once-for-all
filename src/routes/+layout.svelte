@@ -39,8 +39,6 @@
 <div ></div>
 <!-- Side menu that slides in from the left -->
 <div class="{isMenuActive ? 'menu-vert open' : 'menu-vert'}">
-    <br>
-    <br>
     <ul>
       <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Home</a></li>
       <li><a href="/about" on:click={() =>isMenuActive = !isMenuActive}>About</a></li>
@@ -160,11 +158,11 @@
  /* Basic styling */
  .menu-vert {
     position: fixed;
-    top: 0;
+    top: 60px;
     left: -260px; /* Hidden off-screen */
     width: 260px;
     height: 100%;
-    background: linear-gradient(to bottom, #333, #111);
+    background: linear-gradient(to bottom, #333, #000);
     color: white;
     transition: left 0.3s ease; /* Smooth slide effect */
     padding: 20px;
