@@ -17,6 +17,7 @@
 	<title>{title}</title>
 </svelte:head>
 
+<div style="position: absolute;top:60px;left:0px;">
 <div class="container"></div>
 <div class="trees reflection" style="top: calc(-440px + {y * 0.5}px);"></div>
 <div class="trees" style="top: calc(60px + {y * 0.5}px);"></div>
@@ -36,6 +37,7 @@
 </div>
 
 <Footer />
+</div>
 
 <style>
 	.container {
@@ -46,8 +48,8 @@
 		height: 500px;
 		width: 100%;
 		overflow: hidden;
-		position: absolute;
-		top: 60px;
+		position: relative;
+		top: 0px;
 		right: 0px;
 	}
 
@@ -115,8 +117,8 @@
 		scroll-margin-top: 60px;
 		width: 100%;
 		height: 1000px;
-		position: absolute;
-		top: 560px;
+		position: relative;
+		top: 60px;
 		left: 0px;
 		background-color: #000;
 	}

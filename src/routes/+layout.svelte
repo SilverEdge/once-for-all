@@ -23,7 +23,6 @@
 
 <nav class="navbar">
     <ul class="nav-links">
-        <li><a href="/">Home</a></li>
         <li><a href="posts">Posts</a></li>
         <li><a href="about">About</a></li>
         <li><a href="contact">Contact</a></li>
@@ -40,10 +39,9 @@
 <!-- Side menu that slides in from the left -->
 <div class="{isMenuActive ? 'menu-vert open' : 'menu-vert'}">
     <ul>
-      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Home</a></li>
+      <li><a href="/posts" on:click={() =>isMenuActive = !isMenuActive}>Posts</a></li>
       <li><a href="/about" on:click={() =>isMenuActive = !isMenuActive}>About</a></li>
-      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Services</a></li>
-      <li><a href="/" on:click={() =>isMenuActive = !isMenuActive}>Contact</a></li>
+      <li><a href="/contact" on:click={() =>isMenuActive = !isMenuActive}>Contact</a></li>
     </ul>
   </div>
 
@@ -110,12 +108,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 2;
-    background-image: url('../yt_logo_mono_dark.png');
+    background-image: url('/yt_logo_mono_dark.png');
 }
 
 .navbar {
-    background-color: rgba(3, 3, 3, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: #333;
     padding: 12px 0;
     font-family: Arial, sans-serif;
     position: fixed;
@@ -124,12 +121,13 @@
 }
 
 .fixednavbar {
-    background-color: #333;
+    border-color: #333;
     font-family: Arial, sans-serif;
     position: fixed;
     width: 100%;
     z-index: 1;
     height:60px;
+    visibility: hidden;
 }
 
 .nav-links {
@@ -201,6 +199,9 @@
     }
     .navbar {
         visibility: hidden;
+    }
+    .fixednavbar{
+        visibility: visible;
     }
     .hamburger {
         visibility:visible;
